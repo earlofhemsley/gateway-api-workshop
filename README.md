@@ -46,13 +46,14 @@ DEMO_MESH=istio demosh README.md
 For this workshop, you'll need a number of software projects installed. 
 
 - python3 
-    - minimum version is python3.10.8, per `demosh` documentation, 3.12 recommended
-    - ubuntu instructions
+    - minimum version is python3.10.8, per `demosh` documentation
+    - ubuntu instructions for python3.12
         - `sudo add-apt-repository ppa:deadsnakes/ppa`
         - `sudo apt update && sudo apt install python3.12 python3.12-venv -y`
 - python virtual environment
     - this gets you access to `pip` so that you can install and use `demosh`
     - `python3.12 -m venv ./venv`
+    - `source ./venv/bin/activate` from within the repository root
 - `demosh`
     - make sure you have a virtual env setup
     - `pip install demosh` from within the repository root
