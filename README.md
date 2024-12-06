@@ -320,7 +320,7 @@ We can change the fraction of traffic being diverted in realtime, simply by
 changing the weights in the HTTPRoute:
 
 ```bash
-diff -u99 --color=always k8s/03-canary/smiley-canary-{10,50}.yaml
+diff -u99 --color=always k8s/03-canary/smiley-canary-10.yaml k8s/03-canary/smiley-canary-50.yaml
 kubectl apply -f k8s/03-canary/smiley-canary-50.yaml
 ```
 
@@ -328,7 +328,7 @@ Once we're happy that all is well, that's when we switch _all_ the traffic
 over to `smiley2`:
 
 ```bash
-diff -u99 --color=always k8s/03-canary/smiley-canary-{50,100}.yaml
+diff -u99 --color=always k8s/03-canary/smiley-canary-50.yaml k8s/03-canary/smiley-canary-100.yaml
 kubectl apply -f k8s/03-canary/smiley-canary-100.yaml
 ```
 
@@ -408,7 +408,8 @@ We'll now see some green cells in the GUI, but still mostly blue. Of course,
 we can adjust the weights on the fly just like we did with the HTTPRoute:
 
 ```bash
-diff -u99 --color=always k8s/03-canary/color-canary-{25,50}.yaml
+diff -u99 --color=always k8s/03-canary/color-canary-25.yaml k8s/03-canary/color-canary-50.yaml
+
 kubectl apply -f k8s/03-canary/color-canary-50.yaml
 ```
 
@@ -698,7 +699,7 @@ components. Also note that we already have an HTTPRoute for the `/face/` path,
 so we'll add the timeout to that route, rather than creating a new one.
 
 ```bash
-diff -u99 --color=always k8s/{01-base,05-timeouts}/face-route.yaml
+diff -u99 --color=always k8s/01-base/face-route.yaml k8s/05-timeouts/face-route.yaml
 kubectl apply -f k8s/05-timeouts/face-route.yaml
 ```
 

@@ -21,7 +21,7 @@ fi
 
 <!-- @SHOW -->
 
-Istio is a prerequisite for this demo. Let's validate the installation.
+`istioctl` is a prerequisite for this demo. Let's validate the installation.
 
 ```bash
 #@SHOW
