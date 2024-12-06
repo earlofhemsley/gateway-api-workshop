@@ -19,9 +19,9 @@ check bat "https://github.com/sharkdp/bat"
 check helm "https://helm.sh/docs/intro/quickstart/"
 # check yq "https://github.com/mikefarah/yq?tab=readme-ov-file#install"
 
-if [[ $DEMO_MESH = "linkerd" ]]; then \
+if [ "${DEMO_MESH}" = "linkerd" ]; then \
 	check linkerd "https://linkerd.io/2/getting-started/" ;\
-elif [[ $DEMO_MESH = "istio" ]]; then \
+elif [ "${DEMO_MESH}" = "istio" ]; then \
 	check istioctl "https://istio.io/latest/docs/setup/additional-setup/getting-started/" ;\
 else \
 	echo "Please rerun with DEMO_MESH=linkerd or DEMO_MESH=istio" >&2 ;\
