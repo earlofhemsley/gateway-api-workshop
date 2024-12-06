@@ -1,6 +1,6 @@
 # Configuring your service mesh with Gateway API
 
-This file installs Istio for the Gateway API service mesh
+This file validates instlalation of Istio for the Gateway API service mesh
 workshop at KubeCon NA 2024 in Salt Lake City, Utah, USA.
 
 <!--
@@ -21,18 +21,9 @@ fi
 
 <!-- @SHOW -->
 
-Start by installing Istio. We'll use the latest stable version.
+Istio is a prerequisite for this demo. Let's validate the installation.
 
 ```bash
-#@HIDE
-if [[ -z ${DEMO_HOOK_OFFLINE} || -n ${DEMO_HOOK_DOWNLOAD_ISTIO} ]]; then \
-  #@SHOW ;\
-  curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.23.3 sh - ;\
-  #@HIDE ;\
-fi
-
-export PATH=$PWD/istio-1.23.3/bin:$PATH
-
 #@SHOW
 
 which istioctl
