@@ -41,10 +41,32 @@ OR
 ```sh
 DEMO_MESH=istio demosh README.md
 ```
+---
+
+For this workshop, you'll need a number of software projects installed. 
+
+- python3 
+    - minimum version is python3.10.8, per `demosh` documentation, 3.12 recommended
+    - ubuntu instructions
+        - `sudo add-apt-repository ppa:deadsnakes/ppa`
+        - `sudo apt update && sudo apt install python3.12 python3.12-venv -y`
+- python virtual environment
+    - this gets you access to `pip` so that you can install and use `demosh`
+    - `python3.12 -m venv ./venv`
+- `demosh`
+    - make sure you have a virtual env setup
+    - `pip install demosh` from within the repository root
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [bat](https://github.com/sharkdp/bat)
+    - ubuntu instructions
+        - `sudo apt update && apt install bat -y`
+        - `sudo update-alternatives  --install /usr/bin/bat bat $(which batcat) 1`
+        - `which bat` to validate 
+- [helm](https://helm.sh/docs/intro/quickstart/)
 
 ---
 
-For this workshop, you'll need a running, empty, Kubernetes cluster.
+You will also need a running, empty, Kubernetes cluster.
 
 If you don't already have a cluster prepared, ensure you have the
 [Docker daemon] or compatible alternative running, [k3d] and [`kubectl`]
@@ -54,6 +76,12 @@ local k3d cluster.
 [Docker daemon]: https://docs.docker.com/config/daemon/start/
 [`kubectl`]: https://kubernetes.io/docs/tasks/tools/#kubectl
 [k3d]: https://k3d.io/
+
+---
+
+When you start this script, there is a script that will validate
+- that you have the required dependencies installed, and 
+- that you have an empty, running cluster 
 
 ---
 <!-- @SHOW -->
